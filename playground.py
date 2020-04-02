@@ -1,3 +1,5 @@
+import random
+
 military = 100 
 entertainment = 100 
 politics = 100
@@ -70,3 +72,26 @@ badrealnews.append(bad1)
 badrealnews.append(bad2)
 badrealnews.append(bad3)
 badrealnews.append(bad4)
+
+i=0
+while i==0:
+    headlinename = input('Enter Headline Name')
+    inmil = int(input('Military Enter'))
+    inent = int(input('Entertainment Enter'))
+    inpol = int(input('Politics Enter'))
+    incul = int(input('Culture Enter'))
+    ineco = int(input('Economy Enter'))
+
+    headlineinput = Fakenews(headlinename, inmil, inent, inpol, incul, ineco)
+    headlineinput.implement()
+
+    print("Military  " + military)
+    print("Politics  " + politics)
+    print("Economy " + economy)
+    print("entertainment " + entertainment )
+    print("culture " + culture)
+
+    q=0
+    
+    while q==0
+      x=rand.randrange(4)
