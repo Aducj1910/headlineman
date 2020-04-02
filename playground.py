@@ -73,41 +73,46 @@ badrealnews.append(bad2)
 badrealnews.append(bad3)
 badrealnews.append(bad4)
 
+lengood = len(goodrealnews) 
+lenbad = len(badrealnews)
+
 i=0
 while i==0:
-    headlinename = input('Enter Headline Name')
-    inmil = int(input('Military Enter'))
-    inent = int(input('Entertainment Enter'))
-    inpol = int(input('Politics Enter'))
-    incul = int(input('Culture Enter'))
-    ineco = int(input('Economy Enter'))
+    headlinename = input('Enter Headline Name ')
+    inmil = int(input('Military Enter '))
+    inent = int(input('Entertainment Enter '))
+    inpol = int(input('Politics Enter '))
+    incul = int(input('Culture Enter '))
+    ineco = int(input('Economy Enter '))
 
     headlineinput = Fakenews(headlinename, inmil, inent, inpol, incul, ineco)
     headlineinput.implement()
 
-    print("Military  " + string(military))
-    print("Politics  " + string(politics))
-    print("Economy " + string(economy))
-    print("entertainment " + string(entertainment) )
-    print("culture " + string(culture))
+    print("Military  " + str(military))
+    print("Politics  " + str(politics))
+    print("Economy " + str(economy))
+    print("entertainment " + str(entertainment))
+    print("culture " + str(culture))
 
     q=0
     y=0
+    
     while q==0:
-      x=rand.randrange(3)
+      x=random.randrange(lengood - 1)
       article1=goodrealnews[x]
       article1.implement
-      print(article1.headlinename)
+      print(article1.headline)
       y=y+1
-      x=rand.randrange(3)
+      x=random.randrange(lenbad - 1)
       article2=badrealnews[x]
       article2.implement
-      print(article2.headlinename)
+      print(article2.headline)
       y=y+1
       if y>4:
         q=1
-    print("Military  " + military)
-    print("Politics  " + politics)
-    print("Economy " + economy)
-    print("entertainment " + entertainment )
-    print("culture " + culture)
+
+    print("Military  " + str(military))
+    print("Politics  " + str(politics))
+    print("Economy " + str(economy))
+    print("entertainment " + str(entertainment))
+    print("culture " + str(culture))
