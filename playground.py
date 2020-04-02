@@ -100,12 +100,12 @@ while i==0:
     while q==0:
       x=random.randrange(lengood - 1)
       article1=goodrealnews[x]
-      article1.implement
+      article1.implement()
       print(article1.headline)
       y=y+1
       x=random.randrange(lenbad - 1)
       article2=badrealnews[x]
-      article2.implement
+      article2.implement()
       print(article2.headline)
       y=y+1
       if y>4:
