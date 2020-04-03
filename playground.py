@@ -166,7 +166,7 @@ while i==0:
         a3=random.randrange(len(fakenewshead))
         Print(fakenewshead[a3].headline + "  Press 3 to select") 
 
-        val=int(input("press 9 to quit")
+        val=int(input("press 9 to quit"))
         if val==1 :
            fakenewshead[a1].implement()
         else if val==2 :
