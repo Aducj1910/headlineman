@@ -118,6 +118,18 @@ nuetralnews.append(nuetral8)
 nuetralnews.append(nuetral9)
 nuetralnews.append(nuetral10)
 
+fakenewshead.append(fake1)
+fakenewshead.append(fake2)
+fakenewshead.append(fake3)
+fakenewshead.append(fake4)
+fakenewshead.append(fake5)
+fakenewshead.append(fake6)
+fakenewshead.append(fake7)
+fakenewshead.append(fake8)
+fakenewshead.append(fake9)
+fakenewshead.append(fake10)
+fakenewshead.append(fake11)
+
 
 i=0
 while i==0:
