@@ -1,4 +1,7 @@
 import random
+import tkinter as tk
+from tkinter import *
+from tkinter import filedialog
 
 military = 100 
 entertainment = 100 
@@ -200,6 +203,7 @@ while i==0:
              q=1
 
     def fakechoice():
+        global i
         # print("Choose Which Article to publish")
         a1=random.randrange(len(fakenewshead))
         # print(" ")
