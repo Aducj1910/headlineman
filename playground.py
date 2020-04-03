@@ -178,7 +178,7 @@ while i==0:
             print(" ")
             goodrealnews.remove(article1)
             y=y+1
-        elif military>130 or politics>130 or economy<130 or entertainment<130 or culture<130:
+        elif military>130 or politics>130 or economy>130 or entertainment>130 or culture>130:
             x=random.randrange(len(badrealnews))
             article2=badrealnews[x]
             article2.implement()
@@ -189,7 +189,7 @@ while i==0:
             y=y+1
         else:
             x=random.randrange(len(nuetralnews))
-            article3=nuetrealnews[x]
+            article3=nuetralnews[x]
             article3.implement()
             print(" ")
             print(article3.headline)
@@ -202,11 +202,15 @@ while i==0:
 
     print("Choose Which Article to publish")
     a1=random.randrange(len(fakenewshead))
+    print(" ")
     print(fakenewshead[a1].headline + "  Press 1 to select") 
+    print(" ")
     a2=random.randrange(len(fakenewshead))
     print(fakenewshead[a2].headline + "  Press 2 to select") 
+    print(" ")
     a3=random.randrange(len(fakenewshead))
     print(fakenewshead[a3].headline + "  Press 3 to select") 
+    print(" ")
 
     val=int(input("press 9 to quit    "))
         
