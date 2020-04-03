@@ -227,10 +227,13 @@ while i==0:
                 
             if val==1:
                 fakenewshead[a1].implement()
+                fakenewshead.remove(fakenewshead[a1])
             elif val==2 :
                 fakenewshead[a2].implement()
+                fakenewshead.remove(fakenewshead[a2])
             elif val==3 :
                 fakenewshead[a3].implement()
+                fakenewshead.remove(fakenewshead[a3])
             elif val==9 :
                 i=1 
 
