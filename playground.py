@@ -55,7 +55,7 @@ class Realnews:
 goodrealnews = []
 badrealnews = []
 fakenewshead = []
-neutralnews = [] 
+nuetralnews = [] 
 
 fake1 = Fakenews('Are your babies military spies?', -11, 0, -6, -6, 0)
 fake2 = Fakenews('Ku Klux Klan member becomes first from the group to be elected to Senate', -5, 0, -10, -5, -5)
@@ -82,16 +82,16 @@ bad5 = Realnews('Serial killer on the loose', 0, -2, -1, -9, -3)
 bad6 = Realnews('Middle East blocks all trade with NATO', -2, 0, -4, -1, -12)
 bad7 = Realnews('Wildfire in California spreads', 1, -7, -4, -5, -4)
 
-neutral1= Realnews('Stalemate at Middle Eastern Front ', 3, 0, -5, -2,-3)
-neutral2= Realnews('Sweden wins global carpenter Olympics  ', 0, , 2, 0, 3, 0)
-neutral3= Realnews('British Prime Minister meets Brazilian Envoy, talks Trade ', 0, 0, 3, 2, 4)
-neutral4= Realnews('Manchester United wins EFL League 1!!! ', 0, 3, 0, 2, 1)
-neutral5= Realnews('Elections held sucessfully in Brazil  ', 0, 0, 5, 2, 3)
-neutral6= Realnews('UN Security Council adds India as permanant member ', 5, 0, 5, 0, 3)
-neutral7= Realnews('Migrant crisis in Europe continues... ', 5, 0, -5, -10, -6)
-neutral8= Realnews('American Weapon manufacturers show record low profits, blame the hippies. ', -8, 3, 3, 0,-5)
-neutral9= Realnews('Veteran Actor passes away ', 0, -8, 0, -2, 0)
-neutral10= Realnews('Treaty Signed between East and West Korea ', -5, 0, 5, 2, 5)
+nuetral1= Realnews('Stalemate at Middle Eastern Front ', 3, 0, -5, -2,-3)
+nuetral2= Realnews('Sweden wins global carpenter Olympics  ', 0, , 2, 0, 3, 0)
+nuetral3= Realnews('British Prime Minister meets Brazilian Envoy, talks Trade ', 0, 0, 3, 2, 4)
+nuetral4= Realnews('Manchester United wins EFL League 1!!! ', 0, 3, 0, 2, 1)
+nuetral5= Realnews('Elections held sucessfully in Brazil  ', 0, 0, 5, 2, 3)
+nuetral6= Realnews('UN Security Council adds India as permanant member ', 5, 0, 5, 0, 3)
+nuetral7= Realnews('Migrant crisis in Europe continues... ', 5, 0, -5, -10, -6)
+nuetral8= Realnews('American Weapon manufacturers show record low profits, blame the hippies. ', -8, 3, 3, 0,-5)
+nuetral9= Realnews('Veteran Actor passes away ', 0, -8, 0, -2, 0)
+nuetral10= Realnews('Treaty Signed between East and West Korea ', -5, 0, 5, 2, 5)
 
 goodrealnews.append(good1)
 goodrealnews.append(good2)
@@ -107,16 +107,16 @@ badrealnews.append(bad5)
 badrealnews.append(bad6)
 badrealnews.append(bad7)
 
-neutralnews.append(neutral1)
-neutralnews.append(neutral2)
-neutralnews.append(neutral3)
-neutralnews.append(neutral4)
-neutralnews.append(neutral5)
-neutralnews.append(neutral6)
-neutralnews.append(neutral7)
-neutralnews.append(neutral8)
-neutralnews.append(neutral9)
-neutralnews.append(neutral10)
+nuetralnews.append(nuetral1)
+nuetralnews.append(nuetral2)
+nuetralnews.append(nuetral3)
+nuetralnews.append(nuetral4)
+nuetralnews.append(nuetral5)
+nuetralnews.append(nuetral6)
+nuetralnews.append(nuetral7)
+nuetralnews.append(nuetral8)
+nuetralnews.append(nuetral9)
+nuetralnews.append(nuetral10)
 
 fakenewshead.append(fake1)
 fakenewshead.append(fake2)
@@ -133,15 +133,6 @@ fakenewshead.append(fake11)
 
 i=0
 while i==0:
-    headlinename = input('Enter Headline Name ')
-    inmil = int(input('Military Enter '))
-    inent = int(input('Entertainment Enter '))
-    inpol = int(input('Politics Enter '))
-    incul = int(input('Culture Enter '))
-    ineco = int(input('Economy Enter '))
-
-    headlineinput = Fakenews(headlinename, inmil, inent, inpol, incul, ineco)
-    headlineinput.implement()
 
     print("Military  " + str(military))
     print("Politics  " + str(politics))
@@ -153,22 +144,43 @@ while i==0:
     y=0
     
     while q==0:
-       x=random.randrange(len(goodrealnews))
-       article1=goodrealnews[x]
-       article1.implement()
-       print(article1.headline)
-       goodrealnews.remove(article1)
-       y=2
-       x=random.randrange(len(badrealnews))
-       article2=badrealnews[x]
-       article2.implement()
-       print(article2.headline)
-       badrealnews.remove(article2)
-       if y>1:
-        q=1
+        x=random.randrange(len(goodrealnews))
+        article1=goodrealnews[x]
+        article1.implement()
+        print(article1.headline)
+        goodrealnews.remove(article1)
+        y=2
+        x=random.randrange(len(badrealnews))
+        article2=badrealnews[x]
+        article2.implement()
+        print(article2.headline)
+        badrealnews.remove(article2)
+        if y>1:
+            q=1
+        
+        Print("Choose Which Article to publish")
+        a1=random.randrange(len(fakenewshead))
+        Print(fakenewshead[a1].headline + "  Press 1 to select") 
+        a2=random.randrange(len(fakenewshead))
+        Print(fakenewshead[a2].headline + "  Press 2 to select") 
+        a3=random.randrange(len(fakenewshead))
+        Print(fakenewshead[a3].headline + "  Press 3 to select") 
 
-    print("Military  " + str(military))
-    print("Politics  " + str(politics))
-    print("Economy " + str(economy))
-    print("entertainment " + str(entertainment))
-    print("culture " + str(culture))
+        val=int(input("press 9 to quit")
+        if val==1:
+           fakenewshead[a1].implement
+        else if val==2:
+            fakenewshead[a2].implement
+        else if val==3:
+            fakenewshead[a3].implement
+        else if val==9:
+            q=1
+        
+
+
+
+
+
+
+
+    
