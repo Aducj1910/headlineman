@@ -143,20 +143,52 @@ while i==0:
     q=0
     y=0
     
+    # while q==0:
+    #     x=random.randrange(len(goodrealnews))
+    #     article1=goodrealnews[x]
+    #     article1.implement()
+    #     print(article1.headline)
+    #     goodrealnews.remove(article1)
+    #     y=2
+    #     x=random.randrange(len(badrealnews))
+    #     article2=badrealnews[x]
+    #     article2.implement()
+    #     print(article2.headline)
+    #     badrealnews.remove(article2)
+    #     if y>1:
+    #         q=1
     while q==0:
-        x=random.randrange(len(goodrealnews))
-        article1=goodrealnews[x]
-        article1.implement()
-        print(article1.headline)
-        goodrealnews.remove(article1)
-        y=2
-        x=random.randrange(len(badrealnews))
-        article2=badrealnews[x]
-        article2.implement()
-        print(article2.headline)
-        badrealnews.remove(article2)
+        if military<60 or politics<60 or economy<60 or entertainment<60 or culture<60:
+            x=random.randrange(len(goodrealnews))
+            article1=goodrealnews[x]
+            article1.implement()
+            print(" ")
+            print(article1.headline)
+            print(" ")
+            goodrealnews.remove(article1)
+            y=y+1
+        elif military>130 or politics>130 or economy<130 or entertainment<130 or culture<130:
+            x=random.randrange(len(badrealnews))
+            article2=badrealnews[x]
+            article2.implement()
+            print(" ")
+            print(article2.headline)
+            print(" ")
+            badrealnews.remove(article2)
+            y=y+1
+        else:
+            x=random.randrange(len(nuetralnews))
+            article3=nuetrealnews[x]
+            article3.implement()
+            print(" ")
+            print(article3.headline)
+            print(" ")
+            nuetralnews.remove(article3)
+            y=y+1
         if y>1:
-            q=1
+             q=1
+
+
     print("Choose Which Article to publish")
     a1=random.randrange(len(fakenewshead))
     print(fakenewshead[a1].headline + "  Press 1 to select") 
@@ -180,6 +212,11 @@ while i==0:
 
 
 
+
+
+
+
+    
 
 
 
