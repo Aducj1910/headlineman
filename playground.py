@@ -73,9 +73,6 @@ badrealnews.append(bad2)
 badrealnews.append(bad3)
 badrealnews.append(bad4)
 
-lengood = len(goodrealnews) 
-lenbad = len(badrealnews)
-
 i=0
 while i==0:
     headlinename = input('Enter Headline Name ')
@@ -98,17 +95,19 @@ while i==0:
     y=0
     
     while q==0:
-      x=random.randrange(lengood - 1)
-      article1=goodrealnews[x]
-      article1.implement()
-      print(article1.headline)
-      y=y+1
-      x=random.randrange(lenbad - 1)
-      article2=badrealnews[x]
-      article2.implement()
-      print(article2.headline)
-      y=y+1
-      if y>4:
+       x=random.randrange(len(goodrealnews))
+       
+       article1=goodrealnews[x]
+       article1.implement()
+       print(article1.headline)
+       goodrealnews.remove(article1)
+       y=2
+       x=random.randrange(len(badrealnews))
+       article2=badrealnews[x]
+       article2.implement()
+       print(article2.headline)
+       badrealnews.remove(article2)
+       if y>1:
         q=1
 
     print("Military  " + str(military))
