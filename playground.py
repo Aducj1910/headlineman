@@ -68,10 +68,10 @@ fake8 = Fakenews('Rugby banned for promoting violence', -1, -10, 0, -3, -1)
 fake9 = Fakenews("National bank gambles away all of the national reserves on bet365.com", 0, -2, -6, -1, -11)
 fake10 = Fakenews("Kim Jong-Un launches missile at South Korea as a prank", -8, 0, -6, -3, -2)
 
-good1 = Realnews('Global oil rate splummet  ', 8, , 0, 5, -3, 10)
+good1 = Realnews('Global oil rate splummet', 8, 0, 5, -3, 10)
 good2 = Realnews('Stimulus package announced, markets rally', 5, 2, 3, 4, 14)
 good3 = Realnews('Breakthrough in Hydrogen fusion technology', 3, 0, 5, 0, 10)
-good4 = Realnews('Miracle drug to cure AIDS developed', 0, , 5, 8, 5, 5)
+good4 = Realnews('Miracle drug to cure AIDS developed', 0, 5, 8, 5, 5)
 good5 = Realnews('Global literacy rates reach all time high', -2, 3, 8, 8, 2)
 
 bad1 = Realnews('War in Syria shows no signs of stopping', -8, 0, -4, -3, -3)
@@ -83,7 +83,7 @@ bad6 = Realnews('Middle East blocks all trade with NATO', -2, 0, -4, -1, -12)
 bad7 = Realnews('Wildfire in California spreads', 1, -7, -4, -5, -4)
 
 nuetral1= Realnews('Stalemate at Middle Eastern Front ', 3, 0, -5, -2,-3)
-nuetral2= Realnews('Sweden wins global carpenter Olympics  ', 0, , 2, 0, 3, 0)
+nuetral2= Realnews('Sweden wins global carpenter Olympics  ', 0, 2, 0, 3, 0)
 nuetral3= Realnews('British Prime Minister meets Brazilian Envoy, talks Trade ', 0, 0, 3, 2, 4)
 nuetral4= Realnews('Manchester United wins EFL League 1!!! ', 0, 3, 0, 2, 1)
 nuetral5= Realnews('Elections held sucessfully in Brazil  ', 0, 0, 5, 2, 3)
@@ -167,15 +167,15 @@ while i==0:
         Print(fakenewshead[a3].headline + "  Press 3 to select") 
 
         val=int(input("press 9 to quit")
-        if val==1:
-           fakenewshead[a1].implement
-        else if val==2:
-            fakenewshead[a2].implement
-        else if val==3:
-            fakenewshead[a3].implement
-        else if val==9:
+        if val==1 :
+           fakenewshead[a1].implement()
+        else if val==2 :
+            fakenewshead[a2].implement()
+        else if val==3 :
+            fakenewshead[a3].implement()
+        else if val==9 :
             q=1
-        
+
 
 
 
