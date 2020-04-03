@@ -199,26 +199,39 @@ while i==0:
         if y>1:
              q=1
 
+    def fakechoice():
+        # print("Choose Which Article to publish")
+        a1=random.randrange(len(fakenewshead))
+        # print(" ")
+        # print(fakenewshead[a1].headline + "  Press 1 to select") 
+        # print(" ")
+        a2=random.randrange(len(fakenewshead))
+        # print(fakenewshead[a2].headline + "  Press 2 to select") 
+        # print(" ")
+        a3=random.randrange(len(fakenewshead))
+        # print(fakenewshead[a3].headline + "  Press 3 to select") 
+        # print(" ")
+        if a1 == a2 or a1 == a3 or a2 == a3:
+            fakechoice()
+        else:
+            print("Choose Which Article to publish")
+            print(" ")
+            print(fakenewshead[a1].headline + "  Press 1 to select")
+            print(" ")
+            print(fakenewshead[a2].headline + "  Press 2 to select") 
+            print(" ")
+            print(fakenewshead[a3].headline + "  Press 3 to select") 
+            print(" ")
 
-    print("Choose Which Article to publish")
-    a1=random.randrange(len(fakenewshead))
-    print(" ")
-    print(fakenewshead[a1].headline + "  Press 1 to select") 
-    print(" ")
-    a2=random.randrange(len(fakenewshead))
-    print(fakenewshead[a2].headline + "  Press 2 to select") 
-    print(" ")
-    a3=random.randrange(len(fakenewshead))
-    print(fakenewshead[a3].headline + "  Press 3 to select") 
-    print(" ")
+            val=int(input("press 9 to quit    "))
+                
+            if val==1:
+                fakenewshead[a1].implement()
+            elif val==2 :
+                fakenewshead[a2].implement()
+            elif val==3 :
+                fakenewshead[a3].implement()
+            elif val==9 :
+                i=1 
 
-    val=int(input("press 9 to quit    "))
-        
-    if val==1:
-        fakenewshead[a1].implement()
-    elif val==2 :
-        fakenewshead[a2].implement()
-    elif val==3 :
-        fakenewshead[a3].implement()
-    elif val==9 :
-        i=1 
+    fakechoice()
