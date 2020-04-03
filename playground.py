@@ -68,11 +68,16 @@ fake8 = Fakenews('Rugby banned for promoting violence', -1, -10, 0, -3, -1)
 fake9 = Fakenews("National bank gambles away all of the national reserves on bet365.com", 0, -2, -6, -1, -11)
 fake10 = Fakenews("Kim Jong-Un launches missile at South Korea as a prank", -8, 0, -6, -3, -2)
 
-good1 = Realnews('Global oil rate splummet', 8, 0, 5, -3, 10)
+good1 = Realnews('Global oil rates plummet', 8, 0, 5, -3, 10)
 good2 = Realnews('Stimulus package announced, markets rally', 5, 2, 3, 4, 14)
-good3 = Realnews('Breakthrough in Hydrogen fusion technology', 3, 0, 5, 0, 10)
+good3 = Realnews('Breakthrough in Hydrogen fusion technology', 4, 0, 5, 0, 10)
 good4 = Realnews('Miracle drug to cure AIDS developed', 0, 5, 8, 5, 5)
 good5 = Realnews('Global literacy rates reach all time high', -2, 3, 8, 8, 2)
+good6 = Realnews('Anti - vaxxers no more', 1, 1, 4, 10, 5)
+good7 = Realnews('Korean peninsula united!', -2, 5, 6, 4, 8)
+good8 = Realnews('Crime rate at all time low', 4, 4, 5, 1, 2)
+good9 = Realnews('China releases 120 politcal prisoners', -1, 0, 8, 5, 4)
+good10 = Realnews('Hunger rates drop across Africa', 0, 1, 6, 9, 3 )
 
 bad1 = Realnews('War in Syria shows no signs of stopping', -8, 0, -4, -3, -3)
 bad2 = Realnews('Pandemic spreads', -3, -10, 3, -5, -9)
@@ -81,6 +86,7 @@ bad4 = Realnews('Political crisis in Afghanistan', 2, 0, -11, -3, -5)
 bad5 = Realnews('Serial killer on the loose', 0, -2, -1, -9, -3)
 bad6 = Realnews('Middle East blocks all trade with NATO', -2, 0, -4, -1, -12)
 bad7 = Realnews('Wildfire in California spreads', 1, -7, -4, -5, -4)
+bad8 = Realnews('Economist predicts impending recession', -1, -2, -4, 0, -9)
 
 nuetral1= Realnews('Stalemate at Middle Eastern Front ', 3, 0, -5, -2,-3)
 nuetral2= Realnews('Sweden wins global carpenter Olympics  ', 0, 2, 0, 3, 0)
@@ -98,6 +104,11 @@ goodrealnews.append(good2)
 goodrealnews.append(good3)
 goodrealnews.append(good4)
 goodrealnews.append(good5)
+goodrealnews.append(good6)
+goodrealnews.append(good7)
+goodrealnews.append(good8)
+goodrealnews.append(good9)
+goodrealnews.append(good10)
 
 badrealnews.append(bad1)
 badrealnews.append(bad2)
@@ -106,6 +117,7 @@ badrealnews.append(bad4)
 badrealnews.append(bad5)
 badrealnews.append(bad6)
 badrealnews.append(bad7)
+badrealnews.append(bad8)
 
 nuetralnews.append(nuetral1)
 nuetralnews.append(nuetral2)
@@ -128,7 +140,6 @@ fakenewshead.append(fake7)
 fakenewshead.append(fake8)
 fakenewshead.append(fake9)
 fakenewshead.append(fake10)
-fakenewshead.append(fake11)
 
 
 i=0
@@ -199,26 +210,11 @@ while i==0:
 
     val=int(input("press 9 to quit    "))
         
-    if val==1 :
+    if val==1:
         fakenewshead[a1].implement()
-    else if val==2 :
+    elif val==2 :
         fakenewshead[a2].implement()
-    else if val==3 :
+    elif val==3 :
         fakenewshead[a3].implement()
-    else if val==9 :
-        i=1   
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    
+    elif val==9 :
+        i=1 
