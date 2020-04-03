@@ -128,6 +128,7 @@ fakenewshead.append(fake7)
 fakenewshead.append(fake8)
 fakenewshead.append(fake9)
 fakenewshead.append(fake10)
+fakenewshead.append(fake11)
 
 
 i=0
@@ -156,21 +157,31 @@ while i==0:
         badrealnews.remove(article2)
         if y>1:
             q=1
-        
     print("Choose Which Article to publish")
     a1=random.randrange(len(fakenewshead))
-    Print(fakenewshead[a1].headline + "  Press 1 to select") 
+    print(fakenewshead[a1].headline + "  Press 1 to select") 
     a2=random.randrange(len(fakenewshead))
-    Print(fakenewshead[a2].headline + "  Press 2 to select") 
+    print(fakenewshead[a2].headline + "  Press 2 to select") 
     a3=random.randrange(len(fakenewshead))
-    Print(fakenewshead[a3].headline + "  Press 3 to select") 
+    print(fakenewshead[a3].headline + "  Press 3 to select") 
 
-    val = int(input("Press 9 to quit"))
-    if val == 1:
+    val=int(input("press 9 to quit    "))
+        
+    if val==1 :
         fakenewshead[a1].implement()
-    elif val == 2:
+    else if val==2 :
         fakenewshead[a2].implement()
-    elif val == 3:
+    else if val==3 :
         fakenewshead[a3].implement()
-    elif val == 9:
-        q = 1
+    else if val==9 :
+        i=1   
+
+
+
+
+
+
+
+
+
+    
