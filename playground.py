@@ -54,7 +54,8 @@ class Realnews:
 
 goodrealnews = []
 badrealnews = []
-fakenews = []
+fakenewshead = []
+nuetralnews = [] 
 
 fake1 = Fakenews('Are your babies military spies?', -11, 0, -6, -6, 0)
 fake2 = Fakenews('Ku Klux Klan member becomes first from the group to be elected to Senate', -5, 0, -10, -5, -5)
@@ -67,10 +68,11 @@ fake8 = Fakenews('Rugby banned for promoting violence', -1, -10, 0, -3, -1)
 fake9 = Fakenews("National bank gambles away all of the national reserves on bet365.com", 0, -2, -6, -1, -11)
 fake10 = Fakenews("Kim Jong-Un launches missile at South Korea as a prank", -8, 0, -6, -3, -2)
 
-good1 = Realnews('God is real', -50, 0, 6, 10, 5)
-good2 = Realnews('World peace achieved', 5, 10, 6, 8, 15)
-good3 = Realnews('Pandemic over', 5, 10, 4, 15, 25)
-good4 = Realnews('Dogs can talk', 10, 20, -5, 15, 8)
+good1 = Realnews('Global oil rate splummet  ', 8, , 0, 5, -3, 10)
+good2 = Realnews('Stimulus package announced, markets rally', 5, 2, 3, 4, 14)
+good3 = Realnews('Breakthrough in Hydrogen fusion technology', 3, 0, 5, 0, 10)
+good4 = Realnews('Miracle drug to cure AIDS developed', 0, , 5, 8, 5, 5)
+good5 = Realnews('Global literacy rates reach all time high', -2, 3, 8, 8, 2)
 
 bad1 = Realnews('War in Syria shows no signs of stopping', -8, 0, -4, -3, -3)
 bad2 = Realnews('Pandemic spreads', -3, -10, 3, -5, -9)
@@ -80,15 +82,42 @@ bad5 = Realnews('Serial killer on the loose', 0, -2, -1, -9, -3)
 bad6 = Realnews('Middle East blocks all trade with NATO', -2, 0, -4, -1, -12)
 bad7 = Realnews('Wildfire in California spreads', 1, -7, -4, -5, -4)
 
+nuetral1= Realnews('Stalemate at Middle Eastern Front ', 3, 0, -5, -2,-3)
+nuetral2= Realnews('Sweden wins global carpenter Olympics  ', 0, , 2, 0, 3, 0)
+nuetral3= Realnews('British Prime Minister meets Brazilian Envoy, talks Trade ', 0, 0, 3, 2, 4)
+nuetral4= Realnews('Manchester United wins EFL League 1!!! ', 0, 3, 0, 2, 1)
+nuetral5= Realnews('Elections held sucessfully in Brazil  ', 0, 0, 5, 2, 3)
+nuetral6= Realnews('UN Security Council adds India as permanant member ', 5, 0, 5, 0, 3)
+nuetral7= Realnews('Migrant crisis in Europe continues... ', 5, 0, -5, -10, -6)
+nuetral8= Realnews('American Weapon manufacturers show record low profits, blame the hippies. ', -8, 3, 3, 0,-5)
+nuetral9= Realnews('Veteran Actor passes away ', 0, -8, 0, -2, 0)
+nuetral10= Realnews('Treaty Signed between East and West Korea ', -5, 0, 5, 2, 5)
+
 goodrealnews.append(good1)
 goodrealnews.append(good2)
 goodrealnews.append(good3)
 goodrealnews.append(good4)
+goodrealnews.append(good5)
 
 badrealnews.append(bad1)
 badrealnews.append(bad2)
 badrealnews.append(bad3)
 badrealnews.append(bad4)
+badrealnews.append(bad5)
+badrealnews.append(bad6)
+badrealnews.append(bad7)
+
+nuetralnews.append(nuetral1)
+nuetralnews.append(nuetral2)
+nuetralnews.append(nuetral3)
+nuetralnews.append(nuetral4)
+nuetralnews.append(nuetral5)
+nuetralnews.append(nuetral6)
+nuetralnews.append(nuetral7)
+nuetralnews.append(nuetral8)
+nuetralnews.append(nuetral9)
+nuetralnews.append(nuetral10)
+
 
 i=0
 while i==0:
