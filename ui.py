@@ -151,11 +151,20 @@ p = 0
 choice1but = tk.Button(root, text="test")
 choice2but = tk.Button(root, text="test")
 choice3but = tk.Button(root, text="test")
+goodreallabel = tk.Label(root, text = "Ok")
+badreallabel = tk.Label(root, text = "Ok")
+nuetrallabel = tk.Label(root, text ="Ok")
+nuetrallabel2 = tk.Label(root, text="Ok")
+
 def whileloop():
     global p
     global choice1but
     global choice2but
     global choice3but
+    global goodreallabel
+    global badreallabel
+    global nuetrallabel2
+    global nuetrallabel
     q = 0
     y = 0
     while q ==0:
@@ -195,9 +204,14 @@ def whileloop():
             q = 1
 
     def fakechoice():
+        global choice1but
         global choice2but
         global choice2but
         global choice3but
+        global goodreallabel
+        global badreallabel
+        global nuetrallabel2
+        global nuetrallabel
         global i
         global p
         a1=random.randrange(len(fakenewshead))
@@ -238,9 +252,17 @@ def whileloop():
         global choice1but
         global choice2but
         global choice3but
+        global goodreallabel
+        global badreallabel
+        global nuetrallabel2
+        global nuetrallabel
         choice1but.destroy()
         choice2but.destroy()
         choice3but.destroy()
+        goodreallabel.destroy()
+        badreallabel.destroy()
+        nuetrallabel.destroy()
+        nuetrallabel2.destroy()
         root.after(500, whileloop)
 
     test = tk.Button(root, text="Publish", command = publish)
