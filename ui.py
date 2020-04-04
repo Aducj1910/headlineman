@@ -1,6 +1,7 @@
 import random
 from tkinter import *
 import tkinter as tk
+import tkinter.font as tkFont
 
 military = 100 
 entertainment = 100 
@@ -156,6 +157,9 @@ badreallabel = tk.Label(root, text = "Ok")
 nuetrallabel = tk.Label(root, text ="Ok")
 nuetrallabel2 = tk.Label(root, text="Ok")
 
+greenimg = tk.PhotoImage(file="greenbut.png")
+jeffpostimg = tk.PhotoImage(file="fake.png")
+
 def whileloop():
     global p
     global choice1but
@@ -172,7 +176,7 @@ def whileloop():
             x = random.randrange(len(goodrealnews))
             article1 =  goodrealnews[x]
             article1.implement()
-            goodreallabel = tk.Label(root, text = article1.headline)
+            goodreallabel = tk.Label(root, text = article1.headline, image=jeffpostimg, compound="center")
             goodreallabel.grid(row = 0, column=0)
             goodrealnews.remove(article1)
             y = y+1
@@ -180,7 +184,7 @@ def whileloop():
             x = random.randrange(len(badrealnews))
             article2 = badrealnews[x]
             article2.implement()
-            badreallabel = tk.Label(root, text = article2.headline)
+            badreallabel = tk.Label(root, text = article2.headline, image=jeffpostimg, compound="center")
             badreallabel.grid(row = 0, column=0)
             badrealnews.remove(article2)
             y = y+1
@@ -188,7 +192,7 @@ def whileloop():
             x = random.randrange(len(nuetralnews))
             article3 = nuetralnews[x]
             article3.implement()
-            nuetrallabel = tk.Label(root, text = article3.headline)
+            nuetrallabel = tk.Label(root, text = article3.headline, image=jeffpostimg, compound="center")
             nuetrallabel.grid(row = 1, column=0)
             nuetralnews.remove(article3)
             y = y+1
@@ -196,7 +200,7 @@ def whileloop():
                 k = random.randrange(len(nuetralnews))
                 article4 = nuetralnews[k]
                 article4.implement()
-                nuetrallabel2 = tk.Label(root, text = article4.headline)
+                nuetrallabel2 = tk.Label(root, text = article4.headline, image=jeffpostimg, compound="center")
                 nuetrallabel2.grid(row = 0, column=0)
                 nuetralnews.remove(article4)
                 y = y+1
@@ -237,15 +241,15 @@ def whileloop():
         #     print(p)
         if a1 == a2 or a1 == a3 or a2 == a3:
             fakechoice()
-        else:
+        else: #1366x762
             choicelabel = tk.Label(root, text = "Choose which article to publish:")
             choicelabel.grid(row = 2, column =0)
-            choice1but = tk.Button(root, text=fakenewshead[a1].headline, command=choice1)
+            choice1but = tk.Button(root, text=fakenewshead[a1].headline, width = 60, height= 15, compound="center", command=choice1)
             choice1but.grid(row = 3, column = 0)
-            choice2but = tk.Button(root, text=fakenewshead[a2].headline, command=choice2)
+            choice2but = tk.Button(root, text=fakenewshead[a2].headline, width = 60, height= 15, command=choice2)
             choice2but.grid(row = 3, column = 1)
-            choice3but = tk.Button(root, text=fakenewshead[a3].headline, command=choice3)
-            choice3but.grid(row = 3, column = 2)
+            choice3but = tk.Button(root, text=fakenewshead[a3].headline, width = 60, height= 15, command=choice3)
+            choice3but.grid(row=3, column=2)
             # test = tk.Button(root, text="Test", command = testing)
             # test.grid(row=4, column=1)
     def publish():
