@@ -148,8 +148,14 @@ fakenewshead.append(fake8)
 fakenewshead.append(fake9)
 fakenewshead.append(fake10)
 p = 0
+choice1but = tk.Button(root, text="test")
+choice2but = tk.Button(root, text="test")
+choice3but = tk.Button(root, text="test")
 def whileloop():
     global p
+    global choice1but
+    global choice2but
+    global choice3but
     q = 0
     y = 0
     while q ==0:
@@ -189,6 +195,9 @@ def whileloop():
             q = 1
 
     def fakechoice():
+        global choice2but
+        global choice2but
+        global choice3but
         global i
         global p
         a1=random.randrange(len(fakenewshead))
@@ -226,13 +235,18 @@ def whileloop():
             # test = tk.Button(root, text="Test", command = testing)
             # test.grid(row=4, column=1)
     def publish():
-        print(p)
-        root.after(1000, whileloop)
+        global choice1but
+        global choice2but
+        global choice3but
+        choice1but.destroy()
+        choice2but.destroy()
+        choice3but.destroy()
+        root.after(500, whileloop)
 
     test = tk.Button(root, text="Publish", command = publish)
     test.grid(row=4, column=1)
   
     fakechoice()
 
-root.after(1000, whileloop)
+root.after(500, whileloop)
 root.mainloop()
