@@ -225,10 +225,13 @@ def whileloop():
             choice3but.grid(row = 3, column = 2)
             # test = tk.Button(root, text="Test", command = testing)
             # test.grid(row=4, column=1)
-    # def testing():
-    # test = tk.Button(root, text="Test", command = testing)
-    # test.grid(row=4, column=1)
+    def publish():
+        print(p)
+        root.after(1000, whileloop)
 
+    test = tk.Button(root, text="Publish", command = publish)
+    test.grid(row=4, column=1)
+  
     fakechoice()
 
 root.after(1000, whileloop)
