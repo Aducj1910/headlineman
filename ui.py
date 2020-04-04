@@ -147,9 +147,9 @@ fakenewshead.append(fake7)
 fakenewshead.append(fake8)
 fakenewshead.append(fake9)
 fakenewshead.append(fake10)
-
-i = 0
-while i == 0:
+p = 0
+def whileloop():
+    global p
     q = 0
     y = 0
     while q ==0:
@@ -190,19 +190,28 @@ while i == 0:
 
     def fakechoice():
         global i
+        global p
         a1=random.randrange(len(fakenewshead))
         a2=random.randrange(len(fakenewshead))
         a3=random.randrange(len(fakenewshead))
         def choice1():
+            global p
             fakenewshead[a1].implement()
             fakenewshead.remove(fakenewshead[a1])
+            p = 1
         def choice2():
+            global p
             fakenewshead[a2].implement()
             fakenewshead.remove(fakenewshead[a2])
+            p = 1
         def choice3():
+            global p
             fakenewshead[a3].implement()
             fakenewshead.remove(fakenewshead[a3])
-
+            p = 1
+        # def testing():
+        #     global p
+        #     print(p)
         if a1 == a2 or a1 == a3 or a2 == a3:
             fakechoice()
         else:
@@ -214,5 +223,13 @@ while i == 0:
             choice2but.grid(row = 3, column = 1)
             choice3but = tk.Button(root, text=fakenewshead[a3].headline, command=choice3)
             choice3but.grid(row = 3, column = 2)
+            # test = tk.Button(root, text="Test", command = testing)
+            # test.grid(row=4, column=1)
+    # def testing():
+    # test = tk.Button(root, text="Test", command = testing)
+    # test.grid(row=4, column=1)
+
     fakechoice()
-    root.mainloop()
+
+root.after(1000, whileloop)
+root.mainloop()
