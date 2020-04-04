@@ -214,11 +214,5 @@ while i == 0:
             choice2but.grid(row = 3, column = 1)
             choice3but = tk.Button(root, text=fakenewshead[a3].headline, command=choice3)
             choice3but.grid(row = 3, column = 2)
-
-fakechoice()
-# def printto():
-#     print(military)
-# testbutton = tk.Button(root, text = "enter", command = printto)
-# testbutton.grid(row = 4, column=0)
-
-root.mainloop()
+    fakechoice()
+    root.mainloop()
