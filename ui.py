@@ -85,6 +85,15 @@ badrealnews = []
 fakenewshead = []
 nuetralnews = [] 
 
+#10-15 --> $900 to $1000
+#15-17 --> $1100 to $1200
+#17-20 --> $1300 to $1500
+#20-22 --> $1600 to $1900
+#22-25 --> $2000 to $2400
+#25-27 --> $2500 to $2900
+#27-30 --> $3200+
+#30+ --> NO
+
 fake1 = Fakenews('Are your babies military spies?', -11, 0, -6, -6, 0, 2000)
 fake2 = Fakenews('Ku Klux Klan member becomes first from the group to be elected to Senate', -5, 0, -10, -5, -5, 2500)
 fake3 = Fakenews('All flights suspended worldwide', 2, -4, 0, -2, -8, 900)
