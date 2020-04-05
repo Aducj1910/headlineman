@@ -19,13 +19,14 @@ button1 = tk.Button(root, text="Hello")
 
 class Fakenews:
 
-    def __init__(self, headline, mil, ent, pol, cul, eco):
+    def __init__(self, headline, mil, ent, pol, cul, eco, cost):
         self.headline = headline
         self.mil = mil
         self.ent = ent
         self.pol = pol
         self.cul = cul
         self.eco = eco
+        self.cost = cost
 
     def implement(self):
         global military
