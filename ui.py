@@ -13,7 +13,8 @@ money = 15000
 
 root = Tk()
 root.title("Headline")
-
+root.geometry('1440x720')
+root.resizable(width=False, height=False)
 button1 = tk.Button(root, text="Hello")
 
 class Fakenews:
@@ -157,8 +158,9 @@ badreallabel = tk.Label(root, text = "Ok")
 nuetrallabel = tk.Label(root, text ="Ok")
 nuetrallabel2 = tk.Label(root, text="Ok")
 
-greenimg = tk.PhotoImage(file="greenbut.png")
-jeffpostimg = tk.PhotoImage(file="fake.png")
+# greenimg = tk.PhotoImage(file="greenbut.png")
+jeffpostimg = tk.PhotoImage(file="assets/JEFFPOST.png")
+globalherald = tk.PhotoImage(file="assets/globalherald.png")
 
 def whileloop():
     global p
@@ -177,7 +179,7 @@ def whileloop():
             article1 =  goodrealnews[x]
             article1.implement()
             goodreallabel = tk.Label(root, text = article1.headline, image=jeffpostimg, compound="center")
-            goodreallabel.grid(row = 0, column=0)
+            goodreallabel.place(x=250*y, y=10,width=500, height=360)
             goodrealnews.remove(article1)
             y = y+1
         elif military>130 or politics>130 or economy>130 or entertainment>130 or culture>130:
@@ -185,7 +187,7 @@ def whileloop():
             article2 = badrealnews[x]
             article2.implement()
             badreallabel = tk.Label(root, text = article2.headline, image=jeffpostimg, compound="center")
-            badreallabel.grid(row = 0, column=0)
+            badreallabel.place(x=250*y, y=10,width=500, height=360)
             badrealnews.remove(article2)
             y = y+1
         elif military<131 and military>59 or politics<131 and politics>59 or economy<131 and economy>59 or entertainment<131 and entertainment>59 or culture<131 and culture>59:
@@ -193,18 +195,26 @@ def whileloop():
             article3 = nuetralnews[x]
             article3.implement()
             nuetrallabel = tk.Label(root, text = article3.headline, image=jeffpostimg, compound="center")
-            nuetrallabel.grid(row = 1, column=0)
+            nuetrallabel.place(x=0, y=20,width=480, height=360)
             nuetralnews.remove(article3)
             y = y+1
             if y == 1:
                 k = random.randrange(len(nuetralnews))
                 article4 = nuetralnews[k]
                 article4.implement()
-                nuetrallabel2 = tk.Label(root, text = article4.headline, image=jeffpostimg, compound="center")
-                nuetrallabel2.grid(row = 0, column=0)
+                nuetrallabel2 = tk.Label(root, text = article4.headline, image=globalherald, compound="center")
+                nuetrallabel2.place(x=480, y=20,width=480, height=360)
                 nuetralnews.remove(article4)
                 y = y+1
-        if y>1:
+            if y == 2:
+                xx = random.randrange(len(nuetralnews))
+                article5 = nuetralnews[xx]
+                article5.implement()
+                nuetrallabel3 = tk.Label(root, text = article5.headline, image=jeffpostimg, compound="center")
+                nuetrallabel3.place(x=960, y=20,width=480, height=360)
+                nuetralnews.remove(article5)
+                y = y+1
+        if y>2:
             q = 1
 
     def fakechoice():
@@ -243,13 +253,13 @@ def whileloop():
             fakechoice()
         else: #1366x762
             choicelabel = tk.Label(root, text = "Choose which article to publish:")
-            choicelabel.grid(row = 2, column =0)
-            choice1but = tk.Button(root, text=fakenewshead[a1].headline, width = 60, height= 15, compound="center", command=choice1)
-            choice1but.grid(row = 3, column = 0)
-            choice2but = tk.Button(root, text=fakenewshead[a2].headline, width = 60, height= 15, command=choice2)
-            choice2but.grid(row = 3, column = 1)
-            choice3but = tk.Button(root, text=fakenewshead[a3].headline, width = 60, height= 15, command=choice3)
-            choice3but.grid(row=3, column=2)
+            choicelabel.place(x=770, y=1000, width=200, height=25)
+            choice1but = tk.Button(root, text=fakenewshead[a1].headline, width = 25, height= 25, compound="center", command=choice1)
+            choice1but.place(x=140, y=500, width=400, height=25)
+            choice2but = tk.Button(root, text=fakenewshead[a2].headline, width = 25, height= 25, command=choice2)
+            choice2but.place(x=600, y=500, width=400, height=25)
+            choice3but = tk.Button(root, text=fakenewshead[a3].headline, width = 25, height= 25, command=choice3)
+            choice3but.place(x=1000, y=500, width=400, height=25)
             # test = tk.Button(root, text="Test", command = testing)
             # test.grid(row=4, column=1)
     def publish():
@@ -263,10 +273,7 @@ def whileloop():
         choice1but.destroy()
         choice2but.destroy()
         choice3but.destroy()
-        goodreallabel.destroy()
-        badreallabel.destroy()
-        nuetrallabel.destroy()
-        nuetrallabel2.destroy()
+        
         root.after(500, whileloop)
 
     test = tk.Button(root, text="Publish", command = publish)
