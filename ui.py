@@ -33,11 +33,30 @@ class Fakenews:
         global politics
         global culture
         global economy
+        global money
         military = military + self.mil
         entertainment = entertainment + self.ent
         politics = politics + self.pol
         culture = culture + self.cul
         economy = economy + self.eco
+        money = money - self.cost
+
+        effect = abs(self.mil + self.ent + self.pol + self.cul + self.eco)
+        n = random.randrange(6) 
+        if n==0:
+            moneyearned = effect*70
+        elif n==1:
+            moneyearned = effect*80
+        elif n==2:
+            moneyearned = effect*90
+        elif n==3:
+            moneyearned = effect*100
+        elif n==4:
+            moneyearned = effect*110
+        elif n==5:
+            moneyearned = effect*120
+
+        money = money + moneyearned
 
 class Realnews:
 
@@ -66,16 +85,16 @@ badrealnews = []
 fakenewshead = []
 nuetralnews = [] 
 
-fake1 = Fakenews('Are your babies military spies?', -11, 0, -6, -6, 0)
-fake2 = Fakenews('Ku Klux Klan member becomes first from the group to be elected to Senate', -5, 0, -10, -5, -5)
-fake3 = Fakenews('All flights suspended worldwide', 2, -4, 0, -2, -8)
-fake4 = Fakenews('Eating plastic can prevent cancer', -1, -2, 0, -8, -4)
-fake5 = Fakenews('USA has declared war on Canada', -6, 0, -9, 0, -4)
-fake6 = Fakenews('All movies will now have to star at least one disabled lead', 0, -9, -2, -4, -1)
-fake7 = Fakenews('World leaders accidentally swap nuclear codes at UN General Assembly', -8, -3, -8, 0, -6)
-fake8 = Fakenews('Rugby banned for promoting violence', -1, -10, 0, -3, -1)
-fake9 = Fakenews("National bank gambles away all of the national reserves on bet365.com", 0, -2, -6, -1, -11)
-fake10 = Fakenews("Kim Jong-Un launches missile at South Korea as a prank", -8, 0, -6, -3, -2)
+fake1 = Fakenews('Are your babies military spies?', -11, 0, -6, -6, 0, 2000)
+fake2 = Fakenews('Ku Klux Klan member becomes first from the group to be elected to Senate', -5, 0, -10, -5, -5, 2500)
+fake3 = Fakenews('All flights suspended worldwide', 2, -4, 0, -2, -8, 900)
+fake4 = Fakenews('Eating plastic can prevent cancer', -1, -2, 0, -8, -4, 1000)
+fake5 = Fakenews('USA has declared war on Canada', -6, 0, -9, 0, -4, 1200)
+fake6 = Fakenews('All movies will now have to star at least one disabled lead', 0, -9, -2, -4, -1, 1100)
+fake7 = Fakenews('World leaders accidentally swap nuclear codes at UN General Assembly', -8, -3, -8, 0, -6, 2600)
+fake8 = Fakenews('Rugby banned for promoting violence', -1, -10, 0, -3, -1, 1100)
+fake9 = Fakenews("National bank gambles away all of the national reserves on bet365.com", -2, -2, -5, -1, -11, 1800)
+fake10 = Fakenews("Kim Jong-Un launches missile at South Korea as a prank", -8, 0, -6, -3, -2, 1500)
 
 good1 = Realnews('Global oil rates plummet', 8, 0, 5, -3, 10)
 good2 = Realnews('Stimulus package announced, markets rally', 5, 2, 3, 4, 14)
