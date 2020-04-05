@@ -9,13 +9,16 @@ politics = 100
 culture = 100 
 economy = 100
 rating = 0 
-money = 15000
+money = 1000
 
 root = Tk()
 root.title("Headline")
-root.geometry('1440x720')
-root.resizable(width=False, height=False)
+root.geometry('1366x768')
+root.resizable(width=True, height=True)
 button1 = tk.Button(root, text="Hello")
+
+moneylabel =tk.Label(root, text="Money: " + str(money))
+moneylabel.grid(row=0, column=0)
 
 class Fakenews:
 
@@ -35,6 +38,7 @@ class Fakenews:
         global culture
         global economy
         global money
+        global moneylabel
         military = military + self.mil
         entertainment = entertainment + self.ent
         politics = politics + self.pol
@@ -95,16 +99,16 @@ nuetralnews = []
 #27-30 --> $3200+
 #30+ --> NO
 
-fake1 = Fakenews('Are your babies military spies?', -11, 0, -6, -6, 0, 2000)
-fake2 = Fakenews('Ku Klux Klan member becomes first from the group to be elected to Senate', -5, 0, -10, -5, -5, 2500)
-fake3 = Fakenews('All flights suspended worldwide', 2, -4, 0, -2, -8, 900)
-fake4 = Fakenews('Eating plastic can prevent cancer', -1, -2, 0, -8, -4, 1000)
-fake5 = Fakenews('USA has declared war on Canada', -6, 0, -9, 0, -4, 1200)
-fake6 = Fakenews('All movies will now have to star at least one disabled lead', 0, -9, -2, -4, -1, 1100)
-fake7 = Fakenews('World leaders accidentally swap nuclear codes at UN General Assembly', -8, -3, -8, 0, -6, 2600)
-fake8 = Fakenews('Rugby banned for promoting violence', -1, -10, 0, -3, -1, 1100)
-fake9 = Fakenews("National bank gambles away all of the national reserves on bet365.com", -2, -2, -5, -1, -11, 1800)
-fake10 = Fakenews("Kim Jong-Un launches missile at South Korea as a prank", -8, 0, -6, -3, -2, 1500)
+fake1 = Fakenews('Are your babies \n military spies?', -11, 0, -6, -6, 0, 2000)
+fake2 = Fakenews('Ku Klux Klan member \n elected to Senate', -5, 0, -10, -5, -5, 2500)
+fake3 = Fakenews('All flights \n suspended worldwide', 2, -4, 0, -2, -8, 900)
+fake4 = Fakenews('Eating plastic \n can prevent cancer', -1, -2, 0, -8, -4, 1000)
+fake5 = Fakenews('The USA has declared war \n on Canada', -6, 0, -9, 0, -4, 1200)
+fake6 = Fakenews('All movies will now have \n to star at least \n one disabled lead', 0, -9, -2, -4, -1, 1100)
+fake7 = Fakenews('World leaders accidentally \n swap nuclear codes \n at UN General Assembly', -8, -3, -8, 0, -6, 2600)
+fake8 = Fakenews('Rugby banned for \n promoting violence', -1, -10, 0, -3, -1, 1100)
+fake9 = Fakenews("National bank gambles \n away all of the national \n reserves on bet365.com", -2, -2, -5, -1, -11, 1800)
+fake10 = Fakenews("Kim Jong launches missile \n at South Korea as a prank", -8, 0, -6, -3, -2, 1500)
 
 good1 = Realnews('Global oil rates plummet', 8, 0, 5, -3, 10)
 good2 = Realnews('Stimulus package announced, markets rally', 5, 2, 3, 4, 14)
@@ -126,16 +130,16 @@ bad6 = Realnews('Middle East blocks all trade with NATO', -2, 0, -4, -1, -12)
 bad7 = Realnews('Wildfire in California spreads', 1, -7, -4, -5, -4)
 bad8 = Realnews('Economist predicts impending recession', -1, -2, -4, 0, -9)
 
-nuetral1= Realnews('Stalemate at Middle Eastern Front ', 3, 0, -5, -2,-3)
-nuetral2= Realnews('Sweden wins global carpenter Olympics  ', 0, 2, 0, 3, 0)
-nuetral3= Realnews('British Prime Minister meets Brazilian Envoy, talks Trade ', 0, 0, 3, 2, 4)
-nuetral4= Realnews('Manchester United wins EFL League 1!!! ', 0, 3, 0, 2, 1)
-nuetral5= Realnews('Elections held sucessfully in Brazil  ', 0, 0, 5, 2, 3)
-nuetral6= Realnews('UN Security Council adds India as permanant member ', 5, 0, 5, 0, 3)
-nuetral7= Realnews('Migrant crisis in Europe continues... ', 5, 0, -5, -10, -6)
-nuetral8= Realnews('American Weapon manufacturers show record low profits, blame the hippies. ', -8, 3, 3, 0,-5)
+nuetral1= Realnews('Stalemate at Middle \n Eastern Front ', 3, 0, -5, -2,-3)
+nuetral2= Realnews('Sweden wins global \n carpenter Olympics  ', 0, 2, 0, 3, 0)
+nuetral3= Realnews('British Prime Minister meets \n Brazilian Envoy, talks Trade ', 0, 0, 3, 2, 4)
+nuetral4= Realnews('Manchester United wins \n EFL League 1!!! ', 0, 3, 0, 2, 1)
+nuetral5= Realnews('Elections held sucessfully \n in Brazil  ', 0, 0, 5, 2, 3)
+nuetral6= Realnews('UN Security Council adds \n India as permanant member ', 5, 0, 5, 0, 3)
+nuetral7= Realnews('Migrant crisis in \n Europe continues... ', 5, 0, -5, -10, -6)
+nuetral8= Realnews('American Weapon \n manufacturers show record \n losses, blame the hippies. ', -8, 3, 3, 0,-5)
 nuetral9= Realnews('Veteran Actor passes away ', 0, -8, 0, -2, 0)
-nuetral10= Realnews('Treaty Signed between East and West Korea ', -5, 0, 5, 2, 5)
+nuetral10= Realnews('Treaty Signed between \n East and West Korea ', -5, 0, 5, 2, 5)
 
 goodrealnews.append(good1)
 goodrealnews.append(good2)
@@ -187,9 +191,11 @@ badreallabel = tk.Label(root, text = "Ok")
 nuetrallabel = tk.Label(root, text ="Ok")
 nuetrallabel2 = tk.Label(root, text="Ok")
 
+
 # greenimg = tk.PhotoImage(file="greenbut.png")
 jeffpostimg = tk.PhotoImage(file="assets/JEFFPOST.png")
 globalherald = tk.PhotoImage(file="assets/globalherald.png")
+fakelogo = tk.PhotoImage(file="assets/fakenewslogo.png")
 
 def whileloop():
     global p
@@ -200,15 +206,22 @@ def whileloop():
     global badreallabel
     global nuetrallabel2
     global nuetrallabel
+    global moneylabel
+    moneylabel =tk.Label(root, text="Money: " + str(money))
+    moneylabel.grid(row=0, column=0)
+
+
     q = 0
     y = 0
     while q ==0:
+        moneylabel =tk.Label(root, text=money)
+        moneylabel.grid(row=0, column=0)
         if military<60 or politics<60 or economy<60 or entertainment<60 or culture<60:
             x = random.randrange(len(goodrealnews))
             article1 =  goodrealnews[x]
             article1.implement()
             goodreallabel = tk.Label(root, text = article1.headline, image=jeffpostimg, compound="center")
-            goodreallabel.place(x=250*y, y=10,width=500, height=360)
+            goodreallabel.place(x=480*y, y=0,width=500, height=360)
             goodrealnews.remove(article1)
             y = y+1
         elif military>130 or politics>130 or economy>130 or entertainment>130 or culture>130:
@@ -216,31 +229,31 @@ def whileloop():
             article2 = badrealnews[x]
             article2.implement()
             badreallabel = tk.Label(root, text = article2.headline, image=jeffpostimg, compound="center")
-            badreallabel.place(x=250*y, y=10,width=500, height=360)
+            badreallabel.place(x=450*y, y=0,width=500, height=360)
             badrealnews.remove(article2)
             y = y+1
         elif military<131 and military>59 or politics<131 and politics>59 or economy<131 and economy>59 or entertainment<131 and entertainment>59 or culture<131 and culture>59:
             x = random.randrange(len(nuetralnews))
             article3 = nuetralnews[x]
             article3.implement()
-            nuetrallabel = tk.Label(root, text = article3.headline, image=jeffpostimg, compound="center")
-            nuetrallabel.place(x=0, y=20,width=480, height=360)
+            nuetrallabel = tk.Label(root, text = article3.headline, font=("", 22), image=jeffpostimg, compound="center")
+            nuetrallabel.place(x=450*y, y=0,width=480, height=360)
             nuetralnews.remove(article3)
             y = y+1
             if y == 1:
                 k = random.randrange(len(nuetralnews))
                 article4 = nuetralnews[k]
                 article4.implement()
-                nuetrallabel2 = tk.Label(root, text = article4.headline, image=globalherald, compound="center")
-                nuetrallabel2.place(x=480, y=20,width=480, height=360)
+                nuetrallabel2 = tk.Label(root, text = article4.headline, font=("", 22), image=globalherald, compound="center")
+                nuetrallabel2.place(x=450*y, y=0,width=480, height=360)
                 nuetralnews.remove(article4)
                 y = y+1
             if y == 2:
                 xx = random.randrange(len(nuetralnews))
                 article5 = nuetralnews[xx]
                 article5.implement()
-                nuetrallabel3 = tk.Label(root, text = article5.headline, image=jeffpostimg, compound="center")
-                nuetrallabel3.place(x=960, y=20,width=480, height=360)
+                nuetrallabel3 = tk.Label(root, text = article5.headline, font=("", 22), image=jeffpostimg, compound="center")
+                nuetrallabel3.place(x=450*y, y=0,width=480, height=360)
                 nuetralnews.remove(article5)
                 y = y+1
         if y>2:
@@ -255,8 +268,12 @@ def whileloop():
         global badreallabel
         global nuetrallabel2
         global nuetrallabel
+        global moneylabel
+        global money
         global i
         global p
+        moneylabel =tk.Label(root, text="Money: " + str(money))
+        moneylabel.grid(row=0, column=0)
         a1=random.randrange(len(fakenewshead))
         a2=random.randrange(len(fakenewshead))
         a3=random.randrange(len(fakenewshead))
@@ -280,15 +297,15 @@ def whileloop():
         #     print(p)
         if a1 == a2 or a1 == a3 or a2 == a3:
             fakechoice()
-        else: #1366x762
-            choicelabel = tk.Label(root, text = "Choose which article to publish:")
-            choicelabel.place(x=770, y=1000, width=200, height=25)
-            choice1but = tk.Button(root, text=fakenewshead[a1].headline, width = 25, height= 25, compound="center", command=choice1)
-            choice1but.place(x=140, y=500, width=400, height=25)
-            choice2but = tk.Button(root, text=fakenewshead[a2].headline, width = 25, height= 25, command=choice2)
-            choice2but.place(x=600, y=500, width=400, height=25)
-            choice3but = tk.Button(root, text=fakenewshead[a3].headline, width = 25, height= 25, command=choice3)
-            choice3but.place(x=1000, y=500, width=400, height=25)
+        else: #394x224
+            choicelabel = tk.Label(root, text = "Choose which article to publish:", font=("", 22))
+            choicelabel.place(x=450, y=315)
+            choice1but = tk.Button(root, text=fakenewshead[a1].headline, font=("", 22),image=fakelogo, compound="center", command=choice1)
+            choice1but.place(x=50, y=380, width=394, height=225)
+            choice2but = tk.Button(root, text=fakenewshead[a2].headline, font=("", 22),image=fakelogo, compound="center", command=choice2)
+            choice2but.place(x=500, y=380, width=394, height=225)
+            choice3but = tk.Button(root, text=fakenewshead[a3].headline,font=("", 22),image=fakelogo, compound="center", command=choice3)
+            choice3but.place(x=950, y=380, width=394, height=225)
             # test = tk.Button(root, text="Test", command = testing)
             # test.grid(row=4, column=1)
     def publish():
@@ -299,6 +316,8 @@ def whileloop():
         global badreallabel
         global nuetrallabel2
         global nuetrallabel
+        global moneylabel
+        global money
         choice1but.destroy()
         choice2but.destroy()
         choice3but.destroy()
@@ -306,7 +325,7 @@ def whileloop():
         root.after(500, whileloop)
 
     test = tk.Button(root, text="Publish", command = publish)
-    test.grid(row=4, column=1)
+    test.place(x=500, y=650, width = 200)
   
     fakechoice()
 
