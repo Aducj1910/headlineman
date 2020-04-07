@@ -234,15 +234,18 @@ class StartPage(tk.Frame):
         publishimg = tk.PhotoImage(file="assets/publishbutton.png")
         moneylabel =tk.Label(self, text="Money: " + str(money))
         moneylabel.place(x=0, y=360) 
-        cb = lambda: multifunction(controller.show_frame(PublishPage), publishwindow(), PublishPage.fakechoice())
+        cb = lambda: multifunction(controller.show_frame(PublishPage), publishwindow(), PublishPage.fakechoice(self))
         publishbutton = tk.Button(self, image=publishimg, borderwidth=0, command= cb)
         publishbutton.image = publishimg
-        publishbutton.place(x=503, y=315)
+        publishbutton.place(x=503, y=380)
 
         moneylabel =tk.Label(self, text="Money: " + str(money))
         moneylabel.place(x=0, y=360)
 
-    def whileloop():    
+    def whileloop(self):   
+        jeffpostimg = tk.PhotoImage(file="assets/JEFFPOST.png")
+        globalherald = tk.PhotoImage(file="assets/USAtoday.png")
+        publishimg = tk.PhotoImage(file="assets/publishbutton.png") 
         global q
         global y
         while q==0:
@@ -251,7 +254,7 @@ class StartPage(tk.Frame):
                 x = random.randrange(len(goodrealnews))
                 article1 =  goodrealnews[x]
                 article1.implement()
-                goodreallabel = tk.Label(self, text = article1.headline, image=jeffpostimg, compound="center")
+                goodreallabel = tk.Label(app, text = article1.headline, image=jeffpostimg, compound="center")
                 goodreallabel.place(x=450*y, y=0,width=500, height=360)
                 goodrealnews.remove(article1)
                 y = y+1
@@ -259,7 +262,7 @@ class StartPage(tk.Frame):
                 x = random.randrange(len(badrealnews))
                 article2 = badrealnews[x]
                 article2.implement()
-                badreallabel = tk.Label(self, text = article2.headline, image=jeffpostimg, compound="center")
+                badreallabel = tk.Label(app, text = article2.headline, image=jeffpostimg, compound="center")
                 badreallabel.place(x=450*y, y=0,width=500, height=360)
                 badrealnews.remove(article2)
                 y = y+1
@@ -267,26 +270,26 @@ class StartPage(tk.Frame):
                 x = random.randrange(len(nuetralnews))
                 article3 = nuetralnews[x]
                 article3.implement()
-                nuetrallabel = tk.Label(self, text = article3.headline, font=("", 22), image=jeffpostimg, compound="center")
-                nuetrallabel.image = jeffpostimg
-                nuetrallabel.place(x=450*y, y=0,width=480, height=360)
+                self.nuetrallabel = tk.Label(app, text = article3.headline, font=("", 22), image=jeffpostimg, compound="center")
+                self.nuetrallabel.image = jeffpostimg
+                self.nuetrallabel.place(x=450*y, y=0,width=480, height=360)
                 nuetralnews.remove(article3)
                 y = y+1
                 if y == 1:
                     k = random.randrange(len(nuetralnews))
                     article4 = nuetralnews[k]
                     article4.implement()
-                    nuetrallabel2 = tk.Label(self, text = article4.headline, font=("", 22), image=globalherald, compound="center")
-                    nuetrallabel2.image = globalherald
-                    nuetrallabel2.place(x=450*y, y=0,width=480, height=360)
+                    self.nuetrallabel2 = tk.Label(app, text = article4.headline, font=("", 22), image=globalherald, compound="center")
+                    self.nuetrallabel2.image = globalherald
+                    self.nuetrallabel2.place(x=450*y, y=0,width=480, height=360)
                     nuetralnews.remove(article4)
                     y = y+1
                 if y == 2:
                     xx = random.randrange(len(nuetralnews))
                     article5 = nuetralnews[xx]
                     article5.implement()
-                    nuetrallabel3 = tk.Label(self, text = article5.headline, font=("", 22), image=jeffpostimg, compound="center")
-                    nuetrallabel3.place(x=450*y, y=0,width=480, height=360)
+                    self.nuetrallabel3 = tk.Label(app, text = article5.headline, font=("", 22), image=jeffpostimg, compound="center")
+                    self.nuetrallabel3.place(x=450*y, y=0,width=480, height=360)
                     nuetralnews.remove(article5)
                     y = y+1
             if y>2:
@@ -301,12 +304,12 @@ class PublishPage(tk.Frame):
 
             moneylabel =tk.Label(self, text="Money: " + str(money))
             moneylabel.place(x=0, y=360)
-            cb = lambda: multifunction(controller.show_frame(StartPage), publisharticleimplement(), PublishPage.destroy())
+            cb = lambda: multifunction(controller.show_frame(StartPage), publisharticleimplement(),StartPage.whileloop(self),PublishPage.destroy())
             publisharticle = tk.Button(self, image=publishimg, borderwidth=0, command=cb)
             publisharticle.image = publishimg
             publisharticle.place(x=503, y=380)
 
-        def fakechoice():
+        def fakechoice(self):
             fakelogo = tk.PhotoImage(file="assets/fakenewslogo.png")
             publishimg = tk.PhotoImage(file="assets/publishbutton.png")
             a1=random.randrange(len(fakenewshead))
@@ -330,27 +333,24 @@ class PublishPage(tk.Frame):
             if a1 == a2 or a1 == a3 or a2 == a3:
                 PublishPage.fakechoice()
             else: #394x224
-                choicelabel = tk.Label(app, text = "Choose which article to publish:", font=("", 22))
-                choicelabel.place(x=450, y=0)
-                choice1but = tk.Button(app, text=fakenewshead[a1].headline, font=("", 22),image=fakelogo, compound="center", command=choice1, borderwidth=0)
-                choice1but.image=fakelogo
-                choice1but.place(x=50, y=65, width=394, height=225)
-                choice2but = tk.Button(app, text=fakenewshead[a2].headline, font=("", 22),image=fakelogo, compound="center", command=choice2, borderwidth=0)
-                choice2but.image=fakelogo
-                choice2but.place(x=500, y=65, width=394, height=225)
-                choice3but = tk.Button(app, text=fakenewshead[a3].headline,font=("", 22),image=fakelogo, compound="center", command=choice3, borderwidth=0)
-                choice3but.image=fakelogo
-                choice3but.place(x=950, y=65, width=394, height=225)
+                self.choicelabel = tk.Label(app, text = "Choose which article to publish:", font=("", 22))
+                self.choicelabel.place(x=450, y=0)
+                self.choice1but = tk.Button(app, text=fakenewshead[a1].headline, font=("", 22),image=fakelogo, compound="center", command=choice1, borderwidth=0)
+                self.choice1but.image=fakelogo
+                self.choice1but.place(x=0, y=0, width=480, height=360)
+                self.choice2but = tk.Button(app, text=fakenewshead[a2].headline, font=("", 22),image=fakelogo, compound="center", command=choice2, borderwidth=0)
+                self.choice2but.image=fakelogo
+                self.choice2but.place(x=450, y=0, width=480, height=360)
+                self.choice3but = tk.Button(app, text=fakenewshead[a3].headline,font=("", 22),image=fakelogo, compound="center", command=choice3, borderwidth=0)
+                self.choice3but.image=fakelogo
+                self.choice3but.place(x=900, y=0 ,width=480, height=360)
 
         def destroy():
-            global choicelabel
-            global choice1but
-            global choice2but
-            global choice3but
-            choice1but.destroy()
-            choice2but.destroy()
-            choice3but.destroy()
-            choicelabel.destroy()
+            
+            self.choice1but.destroy()
+            self.choice2but.destroy()
+            self.choice3but.destroy()
+            self.choicelabel.destroy()
 
 
 
