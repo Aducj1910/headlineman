@@ -232,61 +232,56 @@ class StartPage(tk.Frame):
         jeffpostimg = tk.PhotoImage(file="assets/JEFFPOST.png")
         globalherald = tk.PhotoImage(file="assets/globalherald.png")
         publishimg = tk.PhotoImage(file="assets/publishbutton.png")
-
         moneylabel =tk.Label(self, text="Money: " + str(money))
-        moneylabel.place(x=0, y=360)
+        moneylabel.place(x=0, y=360) 
+        global q
+        global y
+        while q==0:
 
-        def whileloop():
-            global q
-            global y
-
-            while q==0:
-
-                if military<60 or politics<60 or economy<60 or entertainment<60 or culture<60:
-                    x = random.randrange(len(goodrealnews))
-                    article1 =  goodrealnews[x]
-                    article1.implement()
-                    goodreallabel = tk.Label(self, text = article1.headline, image=jeffpostimg, compound="center")
-                    goodreallabel.place(x=450*y, y=0,width=500, height=360)
-                    goodrealnews.remove(article1)
+            if military<60 or politics<60 or economy<60 or entertainment<60 or culture<60:
+                x = random.randrange(len(goodrealnews))
+                article1 =  goodrealnews[x]
+                article1.implement()
+                goodreallabel = tk.Label(self, text = article1.headline, image=jeffpostimg, compound="center")
+                goodreallabel.place(x=450*y, y=0,width=500, height=360)
+                goodrealnews.remove(article1)
+                y = y+1
+            elif military>130 or politics>130 or economy>130 or entertainment>130 or culture>130:
+                x = random.randrange(len(badrealnews))
+                article2 = badrealnews[x]
+                article2.implement()
+                badreallabel = tk.Label(self, text = article2.headline, image=jeffpostimg, compound="center")
+                badreallabel.place(x=450*y, y=0,width=500, height=360)
+                badrealnews.remove(article2)
+                y = y+1
+            elif military<131 and military>59 or politics<131 and politics>59 or economy<131 and economy>59 or entertainment<131 and entertainment>59 or culture<131 and culture>59:
+                x = random.randrange(len(nuetralnews))
+                article3 = nuetralnews[x]
+                article3.implement()
+                nuetrallabel = tk.Label(self, text = article3.headline, font=("", 22), image=jeffpostimg, compound="center")
+                nuetrallabel.image = jeffpostimg
+                nuetrallabel.place(x=450*y, y=0,width=480, height=360)
+                nuetralnews.remove(article3)
+                y = y+1
+                if y == 1:
+                    k = random.randrange(len(nuetralnews))
+                    article4 = nuetralnews[k]
+                    article4.implement()
+                    nuetrallabel2 = tk.Label(self, text = article4.headline, font=("", 22), image=globalherald, compound="center")
+                    nuetrallabel2.image = globalherald
+                    nuetrallabel2.place(x=450*y, y=0,width=480, height=360)
+                    nuetralnews.remove(article4)
                     y = y+1
-                elif military>130 or politics>130 or economy>130 or entertainment>130 or culture>130:
-                    x = random.randrange(len(badrealnews))
-                    article2 = badrealnews[x]
-                    article2.implement()
-                    badreallabel = tk.Label(self, text = article2.headline, image=jeffpostimg, compound="center")
-                    badreallabel.place(x=450*y, y=0,width=500, height=360)
-                    badrealnews.remove(article2)
+                if y == 2:
+                    xx = random.randrange(len(nuetralnews))
+                    article5 = nuetralnews[xx]
+                    article5.implement()
+                    nuetrallabel3 = tk.Label(self, text = article5.headline, font=("", 22), image=jeffpostimg, compound="center")
+                    nuetrallabel3.place(x=450*y, y=0,width=480, height=360)
+                    nuetralnews.remove(article5)
                     y = y+1
-                elif military<131 and military>59 or politics<131 and politics>59 or economy<131 and economy>59 or entertainment<131 and entertainment>59 or culture<131 and culture>59:
-                    x = random.randrange(len(nuetralnews))
-                    article3 = nuetralnews[x]
-                    article3.implement()
-                    nuetrallabel = tk.Label(self, text = article3.headline, font=("", 22), image=jeffpostimg, compound="center")
-                    nuetrallabel.image = jeffpostimg
-                    nuetrallabel.place(x=450*y, y=0,width=480, height=360)
-                    nuetralnews.remove(article3)
-                    y = y+1
-                    if y == 1:
-                        k = random.randrange(len(nuetralnews))
-                        article4 = nuetralnews[k]
-                        article4.implement()
-                        nuetrallabel2 = tk.Label(self, text = article4.headline, font=("", 22), image=globalherald, compound="center")
-                        nuetrallabel2.image = globalherald
-                        nuetrallabel2.place(x=450*y, y=0,width=480, height=360)
-                        nuetralnews.remove(article4)
-                        y = y+1
-                    if y == 2:
-                        xx = random.randrange(len(nuetralnews))
-                        article5 = nuetralnews[xx]
-                        article5.implement()
-                        nuetrallabel3 = tk.Label(self, text = article5.headline, font=("", 22), image=jeffpostimg, compound="center")
-                        nuetrallabel3.place(x=450*y, y=0,width=480, height=360)
-                        nuetralnews.remove(article5)
-                        y = y+1
-                if y>2:
-                    q = 1
-        whileloop()
+            if y>2:
+                q = 1
         cb = lambda: multifunction(controller.show_frame(PublishPage), publishwindow())
         publishbutton = tk.Button(self, image=publishimg, borderwidth=0, command= cb)
         publishbutton.image = publishimg
