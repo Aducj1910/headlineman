@@ -234,6 +234,15 @@ class StartPage(tk.Frame):
         publishimg = tk.PhotoImage(file="assets/publishbutton.png")
         moneylabel =tk.Label(self, text="Money: " + str(money))
         moneylabel.place(x=0, y=360) 
+        cb = lambda: multifunction(controller.show_frame(PublishPage), publishwindow(), PublishPage.fakechoice())
+        publishbutton = tk.Button(self, image=publishimg, borderwidth=0, command= cb)
+        publishbutton.image = publishimg
+        publishbutton.place(x=503, y=315)
+
+        moneylabel =tk.Label(self, text="Money: " + str(money))
+        moneylabel.place(x=0, y=360)
+
+    def whileloop():    
         global q
         global y
         while q==0:
@@ -282,61 +291,66 @@ class StartPage(tk.Frame):
                     y = y+1
             if y>2:
                 q = 1
-        cb = lambda: multifunction(controller.show_frame(PublishPage), publishwindow())
-        publishbutton = tk.Button(self, image=publishimg, borderwidth=0, command= cb)
-        publishbutton.image = publishimg
-        publishbutton.place(x=503, y=315)
 
-        moneylabel =tk.Label(self, text="Money: " + str(money))
-        moneylabel.place(x=0, y=360)
 
 class PublishPage(tk.Frame):
         def __init__(self, parent, controller):
             global money
             tk.Frame.__init__(self, parent)
-            fakelogo = tk.PhotoImage(file="assets/fakenewslogo.png")
             publishimg = tk.PhotoImage(file="assets/publishbutton.png")
 
             moneylabel =tk.Label(self, text="Money: " + str(money))
             moneylabel.place(x=0, y=360)
-
-            def fakechoice():
-                a1=random.randrange(len(fakenewshead))
-                a2=random.randrange(len(fakenewshead))
-                a3=random.randrange(len(fakenewshead)) 
-                def choice1():
-                    global p
-                    fakenewshead[a1].implement()
-                    fakenewshead.remove(fakenewshead[a1])
-                    p = 1
-                def choice2():
-                    global p
-                    fakenewshead[a2].implement()
-                    fakenewshead.remove(fakenewshead[a2])
-                    p = 1
-                def choice3():
-                    global p
-                    fakenewshead[a3].implement()
-                    fakenewshead.remove(fakenewshead[a3])
-                    p = 1
-                if a1 == a2 or a1 == a3 or a2 == a3:
-                    fakechoice()
-                else: #394x224
-                    choicelabel = tk.Label(self, text = "Choose which article to publish:", font=("", 22))
-                    choicelabel.place(x=450, y=0)
-                    choice1but = tk.Button(self, text=fakenewshead[a1].headline, font=("", 22),image=fakelogo, compound="center", command=choice1, borderwidth=0)
-                    choice1but.place(x=50, y=65, width=394, height=225)
-                    choice2but = tk.Button(self, text=fakenewshead[a2].headline, font=("", 22),image=fakelogo, compound="center", command=choice2, borderwidth=0)
-                    choice2but.place(x=500, y=65, width=394, height=225)
-                    choice3but = tk.Button(self, text=fakenewshead[a3].headline,font=("", 22),image=fakelogo, compound="center", command=choice3, borderwidth=0)
-                    choice3but.place(x=950, y=65, width=394, height=225)
-
-            cb = lambda: multifunction(controller.show_frame(StartPage), publisharticleimplement())
+            cb = lambda: multifunction(controller.show_frame(StartPage), publisharticleimplement(), PublishPage.destroy())
             publisharticle = tk.Button(self, image=publishimg, borderwidth=0, command=cb)
             publisharticle.image = publishimg
             publisharticle.place(x=503, y=380)
 
-            fakechoice()
+        def fakechoice():
+            fakelogo = tk.PhotoImage(file="assets/fakenewslogo.png")
+            publishimg = tk.PhotoImage(file="assets/publishbutton.png")
+            a1=random.randrange(len(fakenewshead))
+            a2=random.randrange(len(fakenewshead))
+            a3=random.randrange(len(fakenewshead)) 
+            def choice1():
+                global p
+                fakenewshead[a1].implement()
+                fakenewshead.remove(fakenewshead[a1])
+                p = 1
+            def choice2():
+                global p
+                fakenewshead[a2].implement()
+                fakenewshead.remove(fakenewshead[a2])
+                p = 1
+            def choice3():
+                global p
+                fakenewshead[a3].implement()
+                fakenewshead.remove(fakenewshead[a3])
+                p = 1
+            if a1 == a2 or a1 == a3 or a2 == a3:
+                PublishPage.fakechoice()
+            else: #394x224
+                choicelabel = tk.Label(app, text = "Choose which article to publish:", font=("", 22))
+                choicelabel.place(x=450, y=0)
+                choice1but = tk.Button(app, text=fakenewshead[a1].headline, font=("", 22),image=fakelogo, compound="center", command=choice1, borderwidth=0)
+                choice1but.image=fakelogo
+                choice1but.place(x=50, y=65, width=394, height=225)
+                choice2but = tk.Button(app, text=fakenewshead[a2].headline, font=("", 22),image=fakelogo, compound="center", command=choice2, borderwidth=0)
+                choice2but.image=fakelogo
+                choice2but.place(x=500, y=65, width=394, height=225)
+                choice3but = tk.Button(app, text=fakenewshead[a3].headline,font=("", 22),image=fakelogo, compound="center", command=choice3, borderwidth=0)
+                choice3but.image=fakelogo
+                choice3but.place(x=950, y=65, width=394, height=225)
+
+        def destroy():
+            global choicelabel
+            global choice1but
+            global choice2but
+            global choice3but
+            choice1but.destroy()
+            choice2but.destroy()
+            choice3but.destroy()
+            choicelabel.destroy()
 
 
 
