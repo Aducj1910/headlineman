@@ -1,0 +1,67 @@
+import random
+
+military=100
+entertainment=100
+globalpolitics=100
+culture=100
+economy=100
+
+rating=0
+money =0
+Viewers=0
+
+senmil=1
+senent=1
+senglopol=1
+sencul=1
+seneco=1
+
+class News:
+
+    def __init__(self, headline, mil, ent, pol, cul, eco ,milsens ,entsens ,glopolsens ,culsens,ecosens,imgurl):
+        self.headline = headline
+        self.mil = mil
+        self.ent = ent
+        self.pol = pol
+        self.cul = cul
+        self.eco = eco
+        self.imgurl = imgurl
+
+    def implement(self):
+        global military
+        global entertainment
+        global politics
+        global culture
+        global economy
+        global senmil
+        global senent
+        global senglopol
+        global sencul
+        global seneco
+        
+        senmil=senmil+milsens
+        senent=senent+entsens
+        senglopol=senglopol+glopolsens
+        sencul=sencul+culsens
+        seneco=seneco+ecosens
+
+        military = military + self.mil*senmil
+        entertainment = entertainment + self.ent*senent
+        globalpolitics = globalpolitics + self.pol*senglopol
+        culture = culture + self.cul*sencul
+        economy = economy + self.eco*seneco
+
+     def image():
+        return imgurl
+
+class packet :
+	def __init__(self, pack):
+		self.pack=pack[]
+
+	def add(headline1 ,headline2, headline3, headline4, headline5, headline6):
+		self.pack.append(headline1)
+		self.pack.append(headline2)
+		self.pack.append(headline3)
+		self.pack.append(headline4)
+		self.pack.append(headline5)
+		self.pack.append(headline6)
