@@ -51,12 +51,12 @@ class News:
         culture = culture + self.cul*sencul
         economy = economy + self.eco*seneco
 
-     def image():
+    def image():
         return imgurl
 
 class packet :
 	def __init__(self, pack):
-		self.pack=pack[]
+		self.pack=pack()
 
 	def add(headline1 ,headline2, headline3, headline4, headline5, headline6):
 		self.pack.append(headline1)
