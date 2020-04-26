@@ -15,9 +15,9 @@ senent=1
 senglopol=1
 sencul=1
 seneco=1
+B=0.5
 
 class News:
-
     def __init__(self, headline, mil, ent, pol, cul, eco ,milsens ,entsens ,glopolsens ,culsens,ecosens,imgurl):
         self.headline = headline
         self.mil = mil
@@ -53,15 +53,79 @@ class News:
 
     def image():
         return imgurl
+    
+
+
+    class FakeNews:
+
+    def __init__(self, headline, mil, ent, pol, cul, eco ,milsens ,entsens ,glopolsens ,culsens,ecosens,imgurl,P):
+        self.headline = headline
+        self.mil = mil
+        self.ent = ent
+        self.pol = pol
+        self.cul = cul
+        self.eco = eco
+        self.imgurl = imgurl
+        self.P=P
+        self.milsens=milsens
+        self.entsens=entsens
+        self.glopolsens=glopolsens
+        self.culsens=culsens
+        self.ecosens=ecosens
+
+    def implement(self):
+        global military
+        global entertainment
+        global politics
+        global culture
+        global economy
+        global senmil
+        global senent
+        global senglopol
+        global sencul
+        global seneco
+        global B
+        
+        senmil=senmil+self.milsens
+        senent=senent+self.entsens
+        senglopol=senglopol+self.glopolsens
+        sencul=sencul+self.culsens
+        seneco=seneco+self.ecosens
+
+        military = military + self.mil*senmil
+        entertainment = entertainment + self.ent*senent
+        globalpolitics = globalpolitics + self.pol*senglopol
+        culture = culture + self.cul*sencul
+        economy = economy + self.eco*seneco
+        B=B+self.p
+
+    def image():
+        return imgurl
 
 class packet :
-	def __init__(self, pack):
-		self.pack=pack()
+    def __init__(self, pack):
+        self.pack=pack()
 
-	def add(headline1 ,headline2, headline3, headline4, headline5, headline6):
-		self.pack.append(headline1)
-		self.pack.append(headline2)
-		self.pack.append(headline3)
-		self.pack.append(headline4)
-		self.pack.append(headline5)
-		self.pack.append(headline6)
+    def add(headline1 ,headline2, headline3, headline4, headline5, headline6):
+        self.pack.append(headline1)
+        self.pack.append(headline2)
+        self.pack.append(headline3)
+        self.pack.append(headline4)
+        self.pack.append(headline5)
+        self.pack.append(headline6)
+
+class timeline :
+    def __init__(self,timeline):
+        self.timeline=timeline()
+
+    def add(pack):
+        self.timeline.append(pack)
+
+KoreasReal1=News("Tensions rise as Kim Jong Un cancels talks with US foreign sec.",10,0,-8,0,-5,.2,0,0,0,0,"image address not found")
+KoreasReal2=News("Trump furious as Kim Jong Un shruggs of new sanctions",4,0,-9,0,-5,.05,0,.05,0,.1,"image address not found")
+BritainReal1=News("Manchester City in deep financial trouble as oil mogul decides to pull out",0,3,0,2,-1,-.1,.2,0,.1,0,"image address not found")
+KoreasFake1=News("Trump calls Kim Jong but gets rickrolled, orders 7th fleet to set sail to Japan",12,0,-12,0,-2,.3,0,0,0,0,"image address not found")
+KoreasReal2=News("America and N.Korea make up as leaders bond over love for junk food",-18,2,15,3,7,-.2,0,0,0,.1 ,"image address not found")
+BritainReal1=News("Both manchester teams decide to unite under the name Manchester City Uniited",0,3,0,2,-1,-.1,.2,0,.1,0,"image address not found")
+
+initiator = packet([])
