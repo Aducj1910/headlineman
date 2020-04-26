@@ -56,7 +56,7 @@ class News:
     
 
 
-    class FakeNews:
+class FakeNews:
 
     def __init__(self, headline, mil, ent, pol, cul, eco ,milsens ,entsens ,glopolsens ,culsens,ecosens,imgurl,P):
         self.headline = headline
@@ -104,7 +104,7 @@ class News:
 
 class packet :
     def __init__(self, pack):
-        self.pack=pack()
+        self.pack=pack
 
     def add(headline1 ,headline2, headline3, headline4, headline5, headline6):
         self.pack.append(headline1)
