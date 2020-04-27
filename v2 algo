@@ -1,4 +1,6 @@
 import random
+import tkinter as tk
+from tkinter import *
 
 military=100
 entertainment=100
@@ -16,6 +18,9 @@ senglopol=1
 sencul=1
 seneco=1
 B=0.5
+
+root = Tk()
+root.geometry('1366x768')
 
 class News:
     def __init__(self, headline, mil, ent, pol, cul, eco ,milsens ,entsens ,glopolsens ,culsens,ecosens,imgurl):
@@ -138,3 +143,43 @@ KoreasFakeY1=FakeNews("Trump and Kim kiss and make up at the last moment",-18,5,
 KoreasFakeY2=FakeNews("US decides to launch pre-emtive strike wih payload including lewd images of Kim Jong Un",9,0,-5,0,-2,.2,0,0,0,0,"image address not found",.7)
 EntertainmentFakeY3=FakeNews("Transgender asexual muslim Black woman beeing considered for the role of Bond",-3,9,0,3,3,-.3,.2,0,0,0,"image address not found",5)
 escalate = packet([])
+
+escalate.add(KoreasRealY1, KoreasRealY2, EntertainmentRealY3, KoreasFake1, KoreasFake2, EntertainmentFakeY3)
+
+labkorea1 = tk.Label(root, text=(initiator.pack[0]).headline)
+labkorea1.place(x=0,y=0)
+labkorea2 = tk.Label(root, text=(initiator.pack[1]).headline)
+labkorea2.place(x=455, y=0)
+labbritain1 = tk.Label(root, text=(initiator.pack[2]).headline)
+labbritain1.place(x=910, y=0)
+
+# def multifunction(*args):
+#     for function in args:
+#         function
+
+def newspublish():
+    global labkorea1
+    global labkorea2
+    global labbritain1
+    global publishbutton
+    labkorea1.destroy()
+    labkorea2.destroy()
+    labbritain1.destroy()
+    fakekorea1 = tk.Button(root, text=(initiator.pack[3]).headline)
+    fakekorea1.place(x=0,y=0)
+    fakekorea2 = tk.Button(root, text=(initiator.pack[4]).headline)
+    fakekorea2.place(x=455,y=0)
+    fakebritain1 = tk.Button(root, text=(initiator.pack[5]).headline)
+    fakebritain1.place(x=910,y=0)
+    publishbutton.destroy()
+
+    instructlabel = tk.Label(root, text="Click on Article to Publish")
+    instructlabel.place(x=630, y=100)
+
+
+# cb = lambda: multifunction(labkorea1.destroy(), labkorea2.destroy(), labbritain1.destroy())
+
+publishbutton = tk.Button(root, text="Go to publish", command=newspublish)
+publishbutton.place(x=630, y=100)
+
+root.mainloop()
