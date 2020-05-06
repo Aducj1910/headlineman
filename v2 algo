@@ -129,22 +129,22 @@ class FakeNews:
             Viewers=base*senmil
             money=money-cost+viewers*.25
 
-        if typex=='E'
+        if typex=='E':
             Msat=Msat+Msat+2
             Viewers=base*senent
             money=money-cost+viewers*.25
 
-        if typex=='G'
+        if typex=='G':
             Msat=Msat+Msat+2
             Viewers=base*senglopol
             money=money-cost+viewers*.25
 
-        if typex=='C'
+        if typex=='C':
             Msat=Msat+Msat+2
             Viewers=base*sencul
             money=money-cost+viewers*.25
 
-        if typex=='N'
+        if typex=='N':
             Msat=Msat+Msat+2
             Viewers=base*seneco
             money=money-cost+viewers*.25
@@ -183,9 +183,9 @@ class timeline :
 KoreasReal1=News("Tensions rise as Kim Jong Un cancels talks with US foreign sec.",10,0,-8,0,-5,.2,0,0,0,0,"image address not found")
 KoreasReal2=News("Trump furious as Kim Jong Un shruggs of new sanctions",4,0,-9,0,-5,.05,0,.05,0,.1,"image address not found")
 BritainReal1=News("Manchester City in deep financial trouble as oil mogul decides to pull out",0,3,0,2,-1,-.1,.2,0,.1,0,"image address not found",)
-KoreasFake1=FakeNews("Trump calls Kim Jong but gets rickrolled, orders 7th fleet to set sail to Japan",12,0,-12,0,-2,.3,0,0,0,0,"image address not found",.8)
-KoreasFake2=FakeNews("America and N.Korea make up as leaders bond over love for junk food",-18,2,15,3,7,-.2,0,0,0,.1 ,"image address not found",.2)
-BritainFake1=FakeNews("Both manchester teams decide to unite under the name Manchester City Uniited",0,3,0,2,-1,-.1,.2,0,.1,0,"image address not found",5)
+KoreasFake1=FakeNews("Trump calls Kim Jong but gets rickrolled, orders 7th fleet to set sail to Japan",12,0,-12,0,-2,.3,0,0,0,0,"image address not found",.8,10000,M)
+KoreasFake2=FakeNews("America and N.Korea make up as leaders bond over love for junk food",-18,2,15,3,7,-.2,0,0,0,.1 ,"image address not found",.2,8000,M)
+BritainFake1=FakeNews("Both manchester teams decide to unite under the name Manchester City United",0,3,0,2,-1,-.1,.2,0,.1,0,"image address not found",5,7000,E)
 
 initiator = packet([])
 initiator.add(KoreasReal1,KoreasReal2,BritainReal1,KoreasFake1,KoreasFake2,BritainFake1)
@@ -193,9 +193,9 @@ initiator.add(KoreasReal1,KoreasReal2,BritainReal1,KoreasFake1,KoreasFake2,Brita
 KoreasRealY1=News("Unverified source instigates escalation, starts militarization chain reaction between US and N. Korea",12,0,-3,0,2,0,.1,0,0,0,"image address not found")
 KoreasRealY2=News("Doomsaday clock moves closer to midnight due to impending threat of nuclear war",6,-4,-10,-2,-10,-.1,-.2,.2,0,.3,"image address not found") 
 EntertainmentRealY3=News("New Bond movie in the works",0,9,3,0,2,0,.2,0,0,0,"image address not found") 
-KoreasFakeY1=FakeNews("Trump and Kim kiss and make up at the last moment",-18,5,15,5,10,-.5,.1,-.2,0,.2,"image address not found",.3)
-KoreasFakeY2=FakeNews("US decides to launch pre-emtive strike wih payload including lewd images of Kim Jong Un",9,0,-5,0,-2,.2,0,0,0,0,"image address not found",.7)
-EntertainmentFakeY3=FakeNews("Transgender asexual muslim Black woman beeing considered for the role of Bond",-3,9,0,3,3,-.3,.2,0,0,0,"image address not found",5)
+KoreasFakeY1=FakeNews("Trump and Kim kiss and make up at the last moment",-18,5,15,5,10,-.5,.1,-.2,0,.2,"image address not found",.3,8000,M)
+KoreasFakeY2=FakeNews("US decides to launch pre-emtive strike wih payload including lewd images of Kim Jong Un",9,0,-5,0,-2,.2,0,0,0,0,"image address not found",.7,6000,M)
+EntertainmentFakeY3=FakeNews("Transgender asexual muslim Black woman beeing considered for the role of Bond",-3,9,0,3,3,-.3,.2,0,0,0,"image address not found",5,8000,E)
 escalate = packet([])
 
 escalate.add(KoreasRealY1, KoreasRealY2, EntertainmentRealY3, KoreasFake1, KoreasFake2, EntertainmentFakeY3)
