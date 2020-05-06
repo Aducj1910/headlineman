@@ -12,12 +12,21 @@ rating=0
 money =0
 Viewers=0
 
+Msat=0
+Esat=0
+Gsat=0
+Csat=0
+Ecsat=0
+
 senmil=1
 senent=1
 senglopol=1
 sencul=1
 seneco=1
 B=0.5
+
+base=1000
+preview=0 
 
 root = Tk()
 root.geometry('1366x768')
@@ -49,7 +58,7 @@ class News:
         senglopol=senglopol+glopolsens
         sencul=sencul+culsens
         seneco=seneco+ecosens
-
+        
         military = military + self.mil*senmil
         entertainment = entertainment + self.ent*senent
         globalpolitics = globalpolitics + self.pol*senglopol
@@ -63,7 +72,7 @@ class News:
 
 class FakeNews:
 
-    def __init__(self, headline, mil, ent, pol, cul, eco ,milsens ,entsens ,glopolsens ,culsens,ecosens,imgurl,P):
+    def __init__(self, headline, mil, ent, pol, cul, eco ,milsens ,entsens ,glopolsens ,culsens,ecosens,imgurl,P,cost,typex):
         self.headline = headline
         self.mil = mil
         self.ent = ent
@@ -77,6 +86,8 @@ class FakeNews:
         self.glopolsens=glopolsens
         self.culsens=culsens
         self.ecosens=ecosens
+        self.cost= cost
+        self.typex=typex
 
     def implement(self):
         global military
@@ -90,7 +101,16 @@ class FakeNews:
         global sencul
         global seneco
         global B
-        
+        global money
+        global Viewers
+        global Msat
+        global Esat
+        global Gsat
+        global Csat
+        global Ecsat
+        global base 
+        global preview
+
         senmil=senmil+self.milsens
         senent=senent+self.entsens
         senglopol=senglopol+self.glopolsens
@@ -103,6 +123,40 @@ class FakeNews:
         culture = culture + self.cul*sencul
         economy = economy + self.eco*seneco
         B=B+self.p
+
+        if typex=='M':
+            Msat=Msat+Msat+2
+            Viewers=base*senmil
+            money=money-cost+viewers*.25
+
+        if typex=='E'
+            Msat=Msat+Msat+2
+            Viewers=base*senent
+            money=money-cost+viewers*.25
+
+        if typex=='G'
+            Msat=Msat+Msat+2
+            Viewers=base*senglopol
+            money=money-cost+viewers*.25
+
+        if typex=='C'
+            Msat=Msat+Msat+2
+            Viewers=base*sencul
+            money=money-cost+viewers*.25
+
+        if typex=='N'
+            Msat=Msat+Msat+2
+            Viewers=base*seneco
+            money=money-cost+viewers*.25
+
+        base=base+.3*Viewers-.15*preview
+        viewers=preview
+
+
+
+
+
+
 
     def image():
         return imgurl
